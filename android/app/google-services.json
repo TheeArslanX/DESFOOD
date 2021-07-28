@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "140672105791",
+    "project_id": "giris-658b0",
+    "storage_bucket": "giris-658b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140672105791:android:4392af0e7a29440f2d278a",
+        "android_client_info": {
+          "package_name": "com.example.desfoodd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140672105791-p0snfvtjgns0uj78qfvtit0kvoag0g29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXTxHuXqjJVoClYZhQkJUny-uX7ZumM-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140672105791-p0snfvtjgns0uj78qfvtit0kvoag0g29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
