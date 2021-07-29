@@ -1,5 +1,6 @@
 import 'package:desfoodd/Authenticate/CreateAccount.dart';
 import 'package:desfoodd/Authenticate/Methods.dart';
+import 'package:desfoodd/anagovde.dart';
 import 'package:desfoodd/screens/HomeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -116,7 +117,6 @@ class _IskeleState extends State<Iskele> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
-                        
                           ),
                           child: SingleChildScrollView(
                             child: Form(
@@ -247,10 +247,10 @@ class _IskeleState extends State<Iskele> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (_) =>
-                                                          HomeScreen()));
-                                            } 
+                                                          AnaGovde()));
+                                            }
                                           });
-                                        } 
+                                        }
                                       }
                                     }),
                               ),
