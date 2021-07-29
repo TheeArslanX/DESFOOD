@@ -3,14 +3,15 @@ import 'package:desfoodd/Authenticate/LoginScree.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-Future<User?> createAccount(String name, String email, String password) async {
+Future<User?> createAccount(
+    String name, String surname, String email, String password) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   try {
     User? user = (await _auth.createUserWithEmailAndPassword(
-            email: email, password: password))
+            email: email.trim(), password: password.trim()))
         .user;
 
     if (user != null) {
@@ -20,13 +21,13 @@ Future<User?> createAccount(String name, String email, String password) async {
       user.updateProfile(displayName: name);
 
       await _firestore.collection('users').doc(email).set({
-        "name": name,
-        "email": email,
-        "sifre": password,
+        "Ad": name,
+        "Soyad": surname,
+        "Email": email.trim(),
+        "Sifre": password.trim(),
         "uid": _auth.currentUser!.uid,
       });
-      
-      
+
       return user;
     } else {
       print("Hesap oluşturulamadı");
@@ -41,10 +42,10 @@ Future<User?> createAccount(String name, String email, String password) async {
 Future<User?> logIn(String email, String password) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
-   
+
   try {
     User? user = (await _auth.signInWithEmailAndPassword(
-            email: email, password: password))
+            email: email.trim(), password: password.trim()))
         .user;
 
     if (user != null) {
@@ -55,8 +56,7 @@ Future<User?> logIn(String email, String password) async {
           .get()
           // ignore: deprecated_member_use
           .then((value) => user.updateProfile(displayName: value['name']));
-          
-                 
+
       return user;
     } else {
       print("Giriş başarısız");
