@@ -10,9 +10,7 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    var ekranbilgisi = MediaQuery.of(context);
-    final double ekranyuksekligi = ekranbilgisi.size.height;
-    final double ekrangenisligi = ekranbilgisi.size.width;
+ 
 
     return Column(
       children: [

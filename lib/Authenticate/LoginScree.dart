@@ -1,13 +1,11 @@
 import 'package:desfoodd/Authenticate/CreateAccount.dart';
 import 'package:desfoodd/Authenticate/Methods.dart';
 import 'package:desfoodd/anagovde.dart';
-import 'package:desfoodd/screens/HomeScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cool_alert/cool_alert.dart';
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

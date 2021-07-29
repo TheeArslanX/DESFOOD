@@ -1,6 +1,5 @@
 import 'package:desfoodd/screens/HomeScreen.dart';
 import 'package:desfoodd/screens/Settings.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -30,7 +29,6 @@ class bottomNavigationBar extends StatefulWidget {
 
 class _iskele extends State<bottomNavigationBar> {
   final _pageController = PageController();
-  int _Page = 0;
   int pressedButtonNo = 0;
 
   @override
@@ -39,10 +37,7 @@ class _iskele extends State<bottomNavigationBar> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    var ekranbilgisi = MediaQuery.of(context);
-    final double ekranyuksekligi = ekranbilgisi.size.height;
-    final double ekrangenisligi = ekranbilgisi.size.width;
+  Widget build(BuildContext context) {  
     return Scaffold(
       body: PageView(
           controller: _pageController,

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:desfoodd/Authenticate/Autheticate.dart';
-import 'package:desfoodd/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,7 +13,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(
         Duration(

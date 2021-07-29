@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:desfoodd/anagovde.dart';
-import 'package:desfoodd/screens/HomeScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'Methods.dart';
 
 import 'package:cool_alert/cool_alert.dart';
