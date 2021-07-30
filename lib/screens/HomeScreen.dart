@@ -1,6 +1,7 @@
 import 'package:desfoodd/Modles/Catagories_moddle.dart';
 import 'package:desfoodd/Provider/my_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<CatagoriesModle> burgerList = [];
+  List<CatagoriesModle> resipleList = [];
+  List<CatagoriesModle> lahmacunList = [];
 
   Widget catagoriesContainer({required String image, required String name}) {
     return Column(
@@ -84,11 +87,31 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget resipe() {
+    return Row(
+      children: resipleList
+          .map((e) => catagoriesContainer(image: e.image, name: e.name))
+          .toList(),
+    );
+  }
+
+  Widget lahmacun() {
+    return Row(
+      children: lahmacunList
+          .map((e) => catagoriesContainer(image: e.image, name: e.name))
+          .toList(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     MyProvider provider = Provider.of<MyProvider>(context);
-    provider.getCategories();
-    burgerList = provider.throwList;
+    provider.getBurgerCategori();
+    burgerList = provider.throwBurgerList;
+    provider.getResipeCategori();
+    resipleList = provider.throwResipleList;
+    provider.getLahmacunCategori();
+    lahmacunList = provider.throwLahmacunList;
     return Scaffold(
       drawer: Drawer(
         child: Container(
@@ -169,6 +192,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 burger(),
+                resipe(),
+                lahmacun(),
               ],
             ),
           ),

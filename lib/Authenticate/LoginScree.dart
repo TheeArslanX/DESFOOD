@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -272,42 +271,6 @@ class _IskeleState extends State<Iskele> {
                                             builder: (context) =>
                                                 CreateAccount()));
                                   },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          "Google Hesabı İle Devam Et",
-                          style: TextStyle(
-                              color: Colors.grey, fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(height: 30),
-                        SizedBox(
-                          height: ekranyuksekligi / 18,
-                          width: ekrangenisligi,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(width: 30),
-                              Expanded(
-                                child: Container(
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50),
-                                    //color: Colors.red,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 30.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset("resimler/google.png"),
-                                      ],
-                                    ),
-                                  ),
                                 ),
                               ),
                             ],
