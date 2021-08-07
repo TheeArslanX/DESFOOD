@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:desfoodd/Modles/Catagories_moddle.dart';
+import 'package:desfoodd/Modles/yemekler_modle.dart';
 import 'package:flutter/cupertino.dart';
 
 class MyProvider extends ChangeNotifier {
@@ -22,6 +23,7 @@ class MyProvider extends ChangeNotifier {
       newBurgerList.add(burgerModle);
       burgerList = newBurgerList;
     });
+    notifyListeners();
   }
 
   get throwBurgerList {
@@ -48,6 +50,7 @@ class MyProvider extends ChangeNotifier {
       newResipleList.add(resipeModle);
       resipeList = newResipleList;
     });
+    notifyListeners();
   }
 
   get throwResipleList {
@@ -74,9 +77,34 @@ class MyProvider extends ChangeNotifier {
       newLahmacunList.add(lahmacunModle);
       lahmacunList = newLahmacunList;
     });
+    notifyListeners();
   }
 
   get throwLahmacunList {
     return lahmacunList;
+  }
+
+  //SİNGLE FOOD İTEM//
+
+  List<FoodModle> foodModleList = [];
+  late FoodModle foodModle;
+
+  Future<void> getFoodList() async {
+    List<FoodModle> newFoodModleList = [];
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('yemekler').get();
+    querySnapshot.docs.forEach((element) {
+      foodModle = FoodModle(
+        image: element.get('image'),
+        name: element.get('name'),
+      );
+    });
+    newFoodModleList.add(foodModle);
+    foodModleList = newFoodModleList;
+    notifyListeners();
+  }
+
+  get throwFoodModleList {
+    return foodModleList;
   }
 }

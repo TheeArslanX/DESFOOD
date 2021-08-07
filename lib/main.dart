@@ -1,9 +1,8 @@
 import 'package:desfoodd/Provider/my_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:desfoodd/SplashScreen.dart';
+import 'package:desfoodd/screens/SplashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +21,9 @@ class MyApp extends StatelessWidget {
         title: 'DESFOOD',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          //backgroundColor: Colors.white,
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
           primarySwatch: Colors.orange,
         ),
         home: SplashScreen(),

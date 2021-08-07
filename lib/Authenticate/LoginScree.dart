@@ -1,6 +1,6 @@
 import 'package:desfoodd/Authenticate/CreateAccount.dart';
 import 'package:desfoodd/Authenticate/Methods.dart';
-import 'package:desfoodd/anagovde.dart';
+import 'package:desfoodd/screens/components/bottom_navigatin_bar/anagovde.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import

@@ -1,7 +1,7 @@
 import 'package:desfoodd/Modles/Catagories_moddle.dart';
+import 'package:desfoodd/Modles/yemekler_modle.dart';
 import 'package:desfoodd/Provider/my_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<CatagoriesModle> burgerList = [];
   List<CatagoriesModle> resipleList = [];
   List<CatagoriesModle> lahmacunList = [];
+  List<FoodModle> singleFoodList = [];
 
   Widget catagoriesContainer({required String image, required String name}) {
     return Column(
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage(image),
+            backgroundImage: NetworkImage(image),
             radius: 60,
           ),
           ListTile(
@@ -112,6 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
     resipleList = provider.throwResipleList;
     provider.getLahmacunCategori();
     lahmacunList = provider.throwLahmacunList;
+    provider.getFoodList();
+    singleFoodList = provider.throwFoodModleList;
     return Scaffold(
       drawer: Drawer(
         child: Container(
@@ -207,12 +210,13 @@ class _HomeScreenState extends State<HomeScreen> {
               childAspectRatio: 0.8,
               crossAxisSpacing: 20,
               mainAxisSpacing: 20,
-              children: [
+              children: singleFoodList
+                  .map((e) => bottonContainer(name: e.name, image: e.image))
+                  .toList(),
+              /* bottonContainer(name: "Burger", image: "resimler/google.png"),
                 bottonContainer(name: "Burger", image: "resimler/google.png"),
                 bottonContainer(name: "Burger", image: "resimler/google.png"),
-                bottonContainer(name: "Burger", image: "resimler/google.png"),
-                bottonContainer(name: "Burger", image: "resimler/google.png"),
-              ],
+                bottonContainer(name: "Burger", image: "resimler/google.png"),*/
             ),
           ),
         ],

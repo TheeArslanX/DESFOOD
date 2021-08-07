@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:desfoodd/anagovde.dart';
+import 'package:desfoodd/screens/components/bottom_navigatin_bar/anagovde.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 
 import 'Methods.dart';
 
